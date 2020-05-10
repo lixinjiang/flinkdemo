@@ -19,6 +19,7 @@ public class DataSetWordCount {
         // 通过Flink内置的转换函数进行计算
         DataSet<Tuple2<String, Integer>> counts = text.flatMap(new LineSplitter()).groupBy(0).sum(1);
         // 结果打印
+        // test
         counts.printToErr();
     }
 
