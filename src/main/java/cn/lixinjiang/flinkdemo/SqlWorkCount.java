@@ -37,6 +37,7 @@ public class SqlWorkCount {
         Table tb2 = tableEnv.sqlQuery("select word as word, sum(frequency) as frequency from WordCount GROUP BY word");
 
         // 将表转化为DataSet
+
         DataSet<WC> wcDataSet = tableEnv.toDataSet(tb2, WC.class);
         wcDataSet.printToErr();
     }
